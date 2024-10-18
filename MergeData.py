@@ -1,24 +1,14 @@
 import pandas as pd
 
-t1_df = pd.read_excel("Amzaone Sale file 1.xlsx")
-t2_df = pd.read_excel("Amzaone Sale file 2.xlsx")
+table1_df = pd.read_excel("Amzaone Sale file 1.xlsx")
+table2_df = pd.read_excel("Amzaone Sale file 2.xlsx")
 
-#merging data here
-merge_df =  pd.merge(t1_df,t2_df,on='Order ID',how='outer')
+merged_df = pd.merge(table1_df, table2_df, on='Order ID', how='left')
 
+# table1_columns = table1_df.columns
+# table2_columns = table2_df.columns
 
-#finding columns
-t1_columns = t1_df.columns
-t2_columns = t2_df.columns
-
-#iteration over columns
-for column in t2_columns:
-    if column not in  t1_columns:
-        #please mension your conditions here of data joinning 
-        
-t1_df.to_excel("merged_Result.xlsx",index=False)
-
-
-
-
-
+# for column in table2_df.columns:
+#     if column not in table1_df.columns:
+#         table1_df[column] = table2_df[column]
+merged_df.to_excel("merged_table.xlsx", index=False)
