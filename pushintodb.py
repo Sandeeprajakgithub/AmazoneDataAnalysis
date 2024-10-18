@@ -1,5 +1,5 @@
 #now here we will push our data into my mysql server using python script and then we will import that so our 
-# dashboard will be more dynamic.
+# dashboard will be more dynamic
 
 import pandas as pd
 from sqlalchemy import create_engine
